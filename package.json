@@ -1,0 +1,63 @@
+{
+  "name": "jest-function",
+  "version": "1.0.0",
+  "description": "Delightful function testing.",
+  "keywords": [
+    "test",
+    "testing",
+    "function",
+    "Jest",
+    "TypeScript"
+  ],
+  "author": {
+    "name": "Simon Alling",
+    "email": "alling.simon@gmail.com",
+    "url": "https://simonalling.se"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/SimonAlling/jest-function",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SimonAlling/jest-function"
+  },
+  "bugs": {
+    "url": "https://github.com/SimonAlling/jest-function"
+  },
+  "files": [
+    "/dist"
+  ],
+  "main": "dist/index",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && tsc -d -p . && npm run rename && tsc --module CommonJS -p .",
+    "clean": "rm -rf dist/*",
+    "lint": "tslint --project .",
+    "prepublishOnly": "npm run verify",
+    "rename": "renamer --force --find \"/\\.js$/\" --replace \".mjs\" \"dist/**\"",
+    "test": "jest",
+    "verify": "npm run lint && npm run build && npm test"
+  },
+  "sideEffects": false,
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": ".+\\.test\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ]
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.15",
+    "jest": "^24.8.0"
+  },
+  "devDependencies": {
+    "renamer": "^1.1.2",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  }
+}
