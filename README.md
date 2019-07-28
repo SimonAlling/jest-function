@@ -1,6 +1,6 @@
 # jest-function
 
-> Delightful function testing.
+Delightful function testing.
 
 [![NPM Version][shield-npm]][npm-url]
 [![Downloads Stats][shield-downloads]][npm-url]
